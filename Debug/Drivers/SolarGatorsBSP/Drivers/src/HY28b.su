@@ -1,0 +1,23 @@
+HY28b.cpp:18:13:void Delay(long unsigned int)	16	static
+HY28b.cpp:22:1:HY28b::~HY28b()	16	static
+HY28b.cpp:22:1:virtual HY28b::~HY28b()	16	static
+HY28b.cpp:32:13:void LCD_reset()	8	static
+HY28b.cpp:54:13:void HY28b::DrawRectangle(int16_t, int16_t, int16_t, int16_t, uint16_t)	48	static
+HY28b.cpp:83:13:void HY28b::PutChar(uint16_t, uint16_t, uint8_t, uint16_t)	72	static
+HY28b.cpp:117:6:void HY28b::DrawText(uint16_t, uint16_t, uint8_t*, uint16_t)	48	static
+HY28b.cpp:157:13:void HY28b::Clear(uint16_t)	24	static
+HY28b.cpp:171:6:void HY28b::SetPoint(uint16_t, uint16_t, uint16_t)	32	static
+HY28b.cpp:185:13:void HY28b::WriteDataOnly(uint16_t)	16	static
+HY28b.cpp:199:13:void HY28b::WriteData(uint16_t)	16	static
+HY28b.cpp:218:10:uint16_t HY28b::ReadReg(uint16_t)	16	static
+HY28b.cpp:232:13:void HY28b::WriteIndex(uint16_t)	16	static
+HY28b.cpp:252:16:uint8_t HY28b::SPISendRecvByte(uint8_t)	40	static
+HY28b.cpp:267:13:void HY28b::WriteDataStart()	16	static
+HY28b.cpp:280:17:uint16_t HY28b::ReadData()	32	static
+HY28b.cpp:303:13:void HY28b::WriteReg(uint16_t, uint16_t)	16	static
+HY28b.cpp:318:13:void HY28b::SetCursor(uint16_t, uint16_t)	16	static
+HY28b.cpp:332:1:HY28b::HY28b(SPI_HandleTypeDef*, bool)	24	static
+HY28b.cpp:424:17:uint16_t HY28b::TP_ReadReg(uint8_t)	32	static
+HY28b.cpp:439:17:uint16_t avgClosestVals(uint16_t, uint16_t, uint16_t)	32	static
+HY28b.cpp:463:9:point_t HY28b::TP_ReadXY()	56	static
+HY28b.cpp:481:6:void HY28b::SetSize(uint8_t)	16	static

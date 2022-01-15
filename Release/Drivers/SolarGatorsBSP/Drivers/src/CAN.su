@@ -1,0 +1,6 @@
+CAN.cpp:27:1:SolarGators::Drivers::CANDriver::~CANDriver()	8	static
+CAN.cpp:27:1:virtual SolarGators::Drivers::CANDriver::~CANDriver()	8	static
+CAN.cpp:13:1:SolarGators::Drivers::CANDriver::CANDriver(CAN_HandleTypeDef&, uint32_t)	16	static
+CAN.cpp:31:6:void SolarGators::Drivers::CANDriver::HandleReceive()	72	static
+CAN.cpp:53:6:void SolarGators::Drivers::CANDriver::Send()	0	static
+CAN.cpp:58:6:void SolarGators::Drivers::CANDriver::SetRxFlag()	8	static

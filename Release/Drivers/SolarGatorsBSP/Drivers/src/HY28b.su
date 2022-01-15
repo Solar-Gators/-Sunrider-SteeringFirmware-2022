@@ -1,0 +1,12 @@
+HY28b.cpp:22:1:HY28b::~HY28b()	0	static
+HY28b.cpp:433:17:uint16_t avgClosestVals(uint16_t, uint16_t, uint16_t)	16	static
+HY28b.cpp:22:1:virtual HY28b::~HY28b()	8	static
+HY28b.cpp:247:16:uint8_t HY28b::SPISendRecvByte(uint8_t)	32	static
+HY28b.cpp:227:13:void HY28b::WriteIndex(uint16_t)	16	static
+HY28b.cpp:213:10:uint16_t HY28b::ReadReg(uint16_t)	16	static
+HY28b.cpp:298:13:void HY28b::WriteReg(uint16_t, uint16_t)	16	static
+HY28b.cpp:166:6:void HY28b::SetPoint(uint16_t, uint16_t, uint16_t)	16	static
+HY28b.cpp:112:6:void HY28b::DrawText(uint16_t, uint16_t, uint8_t*, uint16_t)	56	static
+HY28b.cpp:327:1:HY28b::HY28b(SPI_HandleTypeDef*, bool)	16	static
+HY28b.cpp:418:17:uint16_t HY28b::TP_ReadReg(uint8_t)	16	static
+HY28b.cpp:457:9:point_t HY28b::TP_ReadXY()	48	static

@@ -1,0 +1,15 @@
+Steering.cpp:29:3:SolarGators::DataModules::Steering::~Steering()	0	static
+Steering.cpp:71:8:virtual void SolarGators::DataModules::Steering::ToByteArray(uint8_t*) const	0	static
+Steering.cpp:84:8:virtual void SolarGators::DataModules::Steering::FromByteArray(uint8_t*)	8	static
+Steering.cpp:29:3:virtual SolarGators::DataModules::Steering::~Steering()	8	static
+Steering.cpp:16:3:SolarGators::DataModules::Steering::Steering()	8	static
+Steering.cpp:31:8:bool SolarGators::DataModules::Steering::GetLeftTurnStatus() const	0	static
+Steering.cpp:35:8:bool SolarGators::DataModules::Steering::GetRightTurnStatus() const	0	static
+Steering.cpp:39:8:bool SolarGators::DataModules::Steering::GetHazardsStatus() const	0	static
+Steering.cpp:43:8:bool SolarGators::DataModules::Steering::GetBpFaultStatus() const	0	static
+Steering.cpp:47:8:bool SolarGators::DataModules::Steering::GetCruiseEnabledStatus() const	0	static
+Steering.cpp:51:8:bool SolarGators::DataModules::Steering::GetEcoEnabledStatus() const	0	static
+Steering.cpp:55:8:bool SolarGators::DataModules::Steering::GetHeadlightsStatus() const	0	static
+Steering.cpp:59:8:bool SolarGators::DataModules::Steering::GetHornStatus() const	0	static
+Steering.cpp:63:8:bool SolarGators::DataModules::Steering::GetReverseStatus() const	0	static
+Steering.cpp:67:11:uint8_t SolarGators::DataModules::Steering::GetCruiseSpeed() const	0	static
