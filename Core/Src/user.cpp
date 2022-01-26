@@ -8,7 +8,7 @@ extern "C" void CPP_UserSetup(void);
 extern "C" void CPP_HandleGPIOInterrupt(uint16_t GPIO_Pin);
 extern "C" void CPP_HandleCANRxInterrupt();
 
-void UpdateTurnSignals();
+void UpdateSignals();
 void UpdateUI();
 void SendCanMsgs();
 void HandleEco();
@@ -24,7 +24,7 @@ osTimerAttr_t signal_timer_attr =
 };
 /* Definitions for UI Updater */
 osThreadId_t ui_thread_id;
-uint32_t ui_stack[ 64 ];
+uint32_t ui_stack[ 256 ];
 StaticTask_t ui_control_block;
 const osThreadAttr_t ui_thread_attributes = {
   .name = "UI",
@@ -49,36 +49,36 @@ void CPP_UserSetup(void)
   {
     using namespace SolarGators::DataModules;
     // Left Side
-    left_turn.action_ = std::bind(&SteeringController::ToggleLeftTurnSignal, &Controller);
-    cruise_minus.action_ = std::bind(&SteeringController::DecreaseCruiseSpeed, &Controller);
+    left_turn.action_ = std::bind(&SteeringController::ToggleLeftTurnSignal, &LightsState);
+    cruise_minus.action_ = std::bind(&SteeringController::DecreaseCruiseSpeed, &LightsState);
     eco.action_ = HandleEco;
     headlights.action_ = HandleHeadLights;
-    hazards.action_ = std::bind(&SteeringController::ToggleHazards, &Controller);
+    hazards.action_ = std::bind(&SteeringController::ToggleHazards, &LightsState);
     // Right Side
-    right_turn.action_ = std::bind(&SteeringController::ToggleRightTurnSignal, &Controller);
-    cruise_plus.action_ = std::bind(&SteeringController::IncreaseCruiseSpeed, &Controller);
-    horn.action_ = std::bind(&SteeringController::ToggleHorn, &Controller);
+    right_turn.action_ = std::bind(&SteeringController::ToggleRightTurnSignal, &LightsState);
+    cruise_plus.action_ = std::bind(&SteeringController::IncreaseCruiseSpeed, &LightsState);
+    horn.action_ = std::bind(&SteeringController::ToggleHorn, &LightsState);
     cruise.action_ = HandleCruise;
     reverse.action_ = HandleReverse;
   }
   // Add to Button Group
   // Left side
-  Controller.AddButton(&left_turn);
-  Controller.AddButton(&cruise_minus);
-  Controller.AddButton(&eco);
-  Controller.AddButton(&headlights);
-  Controller.AddButton(&hazards);
+  LightsState.AddButton(&left_turn);
+  LightsState.AddButton(&cruise_minus);
+  LightsState.AddButton(&eco);
+  LightsState.AddButton(&headlights);
+  LightsState.AddButton(&hazards);
   // Right side
-  Controller.AddButton(&right_turn);
-  Controller.AddButton(&cruise_plus);
-  Controller.AddButton(&horn);
-  Controller.AddButton(&cruise);
-  Controller.AddButton(&reverse);
+  LightsState.AddButton(&right_turn);
+  LightsState.AddButton(&cruise_plus);
+  LightsState.AddButton(&horn);
+  LightsState.AddButton(&cruise);
+  LightsState.AddButton(&reverse);
   // Load the CAN Controller
   CANController.AddRxModule(&Bms);
   CANController.AddRxModule(&McRx0);
   // Start Thread that Handles Turn Signal LEDs
-  signal_timer_id = osTimerNew((osThreadFunc_t)UpdateTurnSignals, osTimerPeriodic, NULL, &signal_timer_attr);
+  signal_timer_id = osTimerNew((osThreadFunc_t)UpdateSignals, osTimerPeriodic, NULL, &signal_timer_attr);
   if (signal_timer_id == NULL)
   {
       Error_Handler();
@@ -91,28 +91,32 @@ void CPP_UserSetup(void)
       Error_Handler();
   }
   // Start Thread that sends CAN Data
-  signal_timer_id = osTimerNew((osThreadFunc_t)UpdateTurnSignals, osTimerPeriodic, NULL, &signal_timer_attr);
-  if (signal_timer_id == NULL)
+  can_tx_timer_id = osTimerNew((osThreadFunc_t)SendCanMsgs, osTimerPeriodic, NULL, &can_tx_timer_attr);
+  if (can_tx_timer_id == NULL)
   {
       Error_Handler();
   }
-  osTimerStart(signal_timer_id, 50);
+  CANController.Init();
+  osTimerStart(can_tx_timer_id, 50);
 }
 
-void UpdateTurnSignals()
+void UpdateSignals()
 {
-  osMutexAcquire(Controller.mutex_id_, osWaitForever);
-  if(Controller.GetHazardsStatus())
+  osMutexAcquire(LightsState.mutex_id_, osWaitForever);
+  if(LightsState.GetHazardsStatus())
+  {
     lt_indicator.Toggle();
-  else if(Controller.GetRightTurnStatus())
     rt_indicator.Toggle();
-  else if(Controller.GetLeftTurnStatus())
+  }
+  else if(LightsState.GetRightTurnStatus())
+    rt_indicator.Toggle();
+  else if(LightsState.GetLeftTurnStatus())
     lt_indicator.Toggle();
-  if(!Controller.GetHazardsStatus() && !Controller.GetRightTurnStatus())
+  if(!LightsState.GetHazardsStatus() && !LightsState.GetRightTurnStatus())
     HAL_GPIO_WritePin(RT_Led_GPIO_Port, RT_Led_Pin, GPIO_PIN_RESET);
-  if(!Controller.GetHazardsStatus() && !Controller.GetLeftTurnStatus())
+  if(!LightsState.GetHazardsStatus() && !LightsState.GetLeftTurnStatus())
       HAL_GPIO_WritePin(LT_Led_GPIO_Port, LT_Led_Pin, GPIO_PIN_RESET);
-  osMutexRelease(Controller.mutex_id_);
+  osMutexRelease(LightsState.mutex_id_);
 }
 
 void UpdateUI()
@@ -142,38 +146,38 @@ void UpdateUI()
 
 void SendCanMsgs()
 {
-  CANController.Send(&Controller);
+  CANController.Send(&LightsState);
   McReq.SetRequestAllFrames();
   CANController.Send(&McReq);
 }
 
 void CPP_HandleGPIOInterrupt(uint16_t GPIO_Pin)
 {
-  Controller.HandlePress(GPIO_Pin);
+  LightsState.HandlePress(GPIO_Pin);
 }
 
 void CPP_HandleCANRxInterrupt()
 {
-  CANController.HandleReceive();
+  CANController.SetRxFlag();
 }
 
 void HandleEco()
 {
-  Controller.ToggleEco();
+  LightsState.ToggleEco();
   eco_indicator.Toggle();
 }
 void HandleHeadLights()
 {
-  Controller.ToggleHeadlights();
+  LightsState.ToggleHeadlights();
   hl_indicator.Toggle();
 }
 void HandleCruise()
 {
-  Controller.ToggleCruise();
+  LightsState.ToggleCruise();
   cr_indicator.Toggle();
 }
 void HandleReverse()
 {
-  Controller.ToggleReverse();
+  LightsState.ToggleReverse();
   rev_indicator.Toggle();
 }

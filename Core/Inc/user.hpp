@@ -14,14 +14,14 @@
 #include "CAN.hpp"
 
 
-SolarGators::DataModules::SteeringController Controller;
+SolarGators::DataModules::SteeringController LightsState;
 SolarGators::DataModules::MitsubaRequest McReq(SolarGators::DataModuleInfo::MOTORTX_RL_MSG_ID);
 SolarGators::DataModules::OrionBMS Bms(SolarGators::DataModuleInfo::Orion_Id);
 SolarGators::DataModules::MitsubaRx0 McRx0(SolarGators::DataModuleInfo::MOTORRX0_RL_MSG_ID);
 // Forward Declares
 extern SPI_HandleTypeDef hspi1;
 extern CAN_HandleTypeDef hcan;
-SolarGators::Drivers::CANDriver CANController(hcan, 1);
+SolarGators::Drivers::CANDriver CANController(&hcan, 1);
 
 // Buttons
 // Left Side

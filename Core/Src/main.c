@@ -52,7 +52,7 @@ PCD_HandleTypeDef hpcd_USB_FS;
 
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
-uint32_t defaultTaskBuffer[ 64 ];
+uint32_t defaultTaskBuffer[ 128 ];
 osStaticThreadDef_t defaultTaskControlBlock;
 const osThreadAttr_t defaultTask_attributes = {
   .name = "defaultTask",
@@ -60,18 +60,6 @@ const osThreadAttr_t defaultTask_attributes = {
   .cb_size = sizeof(defaultTaskControlBlock),
   .stack_mem = &defaultTaskBuffer[0],
   .stack_size = sizeof(defaultTaskBuffer),
-  .priority = (osPriority_t) osPriorityNormal,
-};
-/* Definitions for Blink */
-osThreadId_t BlinkHandle;
-uint32_t BlinkBuffer[ 64 ];
-osStaticThreadDef_t BlinkControlBlock;
-const osThreadAttr_t Blink_attributes = {
-  .name = "Blink",
-  .cb_mem = &BlinkControlBlock,
-  .cb_size = sizeof(BlinkControlBlock),
-  .stack_mem = &BlinkBuffer[0],
-  .stack_size = sizeof(BlinkBuffer),
   .priority = (osPriority_t) osPriorityLow,
 };
 /* USER CODE BEGIN PV */
@@ -83,10 +71,9 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_CAN_Init(void);
 static void MX_SPI1_Init(void);
-static void MX_USB_PCD_Init(void);
 static void MX_TIM3_Init(void);
+static void MX_USB_PCD_Init(void);
 void StartDefaultTask(void *argument);
-void StartBlink(void *argument);
 
 /* USER CODE BEGIN PFP */
 void CPP_HandleGPIOInterrupt(uint16_t GPIO_Pin);
@@ -128,8 +115,8 @@ int main(void)
   MX_GPIO_Init();
   MX_CAN_Init();
   MX_SPI1_Init();
-  MX_USB_PCD_Init();
   MX_TIM3_Init();
+  MX_USB_PCD_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -156,9 +143,6 @@ int main(void)
   /* Create the thread(s) */
   /* creation of defaultTask */
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
-
-  /* creation of Blink */
-  BlinkHandle = osThreadNew(StartBlink, NULL, &Blink_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   CPP_UserSetup();
@@ -245,11 +229,11 @@ static void MX_CAN_Init(void)
 
   /* USER CODE END CAN_Init 1 */
   hcan.Instance = CAN;
-  hcan.Init.Prescaler = 6;
+  hcan.Init.Prescaler = 4;
   hcan.Init.Mode = CAN_MODE_NORMAL;
   hcan.Init.SyncJumpWidth = CAN_SJW_1TQ;
-  hcan.Init.TimeSeg1 = CAN_BS1_13TQ;
-  hcan.Init.TimeSeg2 = CAN_BS2_2TQ;
+  hcan.Init.TimeSeg1 = CAN_BS1_14TQ;
+  hcan.Init.TimeSeg2 = CAN_BS2_3TQ;
   hcan.Init.TimeTriggeredMode = DISABLE;
   hcan.Init.AutoBusOff = DISABLE;
   hcan.Init.AutoWakeUp = DISABLE;
@@ -505,28 +489,10 @@ void StartDefaultTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
-  }
-  /* USER CODE END 5 */
-}
-
-/* USER CODE BEGIN Header_StartBlink */
-/**
-* @brief Function implementing the Blink thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_StartBlink */
-void StartBlink(void *argument)
-{
-  /* USER CODE BEGIN StartBlink */
-  /* Infinite loop */
-  for(;;)
-  {
     HAL_GPIO_TogglePin(User_LED_GPIO_Port, User_LED_Pin);
     osDelay(500);
   }
-  /* USER CODE END StartBlink */
+  /* USER CODE END 5 */
 }
 
 /**

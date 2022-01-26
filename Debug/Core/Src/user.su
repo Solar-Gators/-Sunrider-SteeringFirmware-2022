@@ -5,15 +5,15 @@ std_function.h:88:17:const void* std::_Any_data::_M_access() const	16	static
 std_function.h:255:5:std::_Function_base::_Function_base()	16	static
 std_function.h:257:5:std::_Function_base::~_Function_base()	16	static
 user.cpp:44:6:void CPP_UserSetup()	208	static
-user.cpp:102:6:void UpdateTurnSignals()	8	static
-user.cpp:118:6:void UpdateUI()	48	static
-user.cpp:143:6:void SendCanMsgs()	8	static
-user.cpp:150:6:void CPP_HandleGPIOInterrupt(uint16_t)	16	static
-user.cpp:155:6:void CPP_HandleCANRxInterrupt()	8	static
-user.cpp:160:6:void HandleEco()	8	static
-user.cpp:165:6:void HandleHeadLights()	8	static
-user.cpp:170:6:void HandleCruise()	8	static
-user.cpp:175:6:void HandleReverse()	8	static
+user.cpp:103:6:void UpdateSignals()	8	static
+user.cpp:122:6:void UpdateUI()	48	static
+user.cpp:147:6:void SendCanMsgs()	8	static
+user.cpp:154:6:void CPP_HandleGPIOInterrupt(uint16_t)	16	static
+user.cpp:159:6:void CPP_HandleCANRxInterrupt()	8	static
+user.cpp:164:6:void HandleEco()	8	static
+user.cpp:169:6:void HandleHeadLights()	8	static
+user.cpp:174:6:void HandleCruise()	8	static
+user.cpp:179:6:void HandleReverse()	8	static
 functional:808:5:) [with _Func = void (SolarGators::DataModules::SteeringController::*)(); _BoundArgs = {SolarGators::DataModules::SteeringController*}]	32	static
 std_function.h:369:11:std::function<void()>::~function()	16	static
 std_function.h:523:2:)>::operator=(_Functor&&) [with _Functor = std::_Bind<void (SolarGators::DataModules::SteeringController::*(SolarGators::DataModules::SteeringController*))()>; _Res = void; _ArgTypes = {}]	56	static
@@ -77,6 +77,6 @@ tuple:1309:5:>&) [with unsigned int __i = 0; _Head = SolarGators::DataModules::S
 move.h:74:5:constexpr _Tp&& std::forward(typename std::remove_reference<_Tp>::type&) [with _Tp = SolarGators::DataModules::SteeringController*&]	16	static
 move.h:74:5:constexpr _Tp&& std::forward(typename std::remove_reference<_Tp>::type&) [with _Tp = void (SolarGators::DataModules::SteeringController::*&)()]	16	static
 invoke.h:70:5:) [with _Res = void; _MemFun = void (SolarGators::DataModules::SteeringController::*&)(); _Tp = SolarGators::DataModules::SteeringController*&; _Args = {}]	24	static
-user.cpp:179:1:void __static_initialization_and_destruction_0(int, int)	32	static
-user.cpp:179:1:cpp)	8	static
-user.cpp:179:1:cpp)	8	static
+user.cpp:183:1:void __static_initialization_and_destruction_0(int, int)	32	static
+user.cpp:183:1:cpp)	8	static
+user.cpp:183:1:cpp)	8	static
