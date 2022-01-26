@@ -47,7 +47,7 @@
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN PFP */
-void CPP_HandleCANRxInterrupt();
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -177,7 +177,7 @@ void CEC_CAN_IRQHandler(void)
   /* USER CODE END CEC_CAN_IRQn 0 */
   HAL_CAN_IRQHandler(&hcan);
   /* USER CODE BEGIN CEC_CAN_IRQn 1 */
-  CPP_HandleCANRxInterrupt();
+
   /* USER CODE END CEC_CAN_IRQn 1 */
 }
 

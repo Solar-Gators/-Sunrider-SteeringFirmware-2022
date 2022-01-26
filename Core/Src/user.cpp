@@ -6,7 +6,6 @@ using namespace SolarGators;
 
 extern "C" void CPP_UserSetup(void);
 extern "C" void CPP_HandleGPIOInterrupt(uint16_t GPIO_Pin);
-extern "C" void CPP_HandleCANRxInterrupt();
 
 void UpdateSignals();
 void UpdateUI();
@@ -97,7 +96,7 @@ void CPP_UserSetup(void)
       Error_Handler();
   }
   CANController.Init();
-  osTimerStart(can_tx_timer_id, 50);
+  osTimerStart(can_tx_timer_id, 100);
 }
 
 void UpdateSignals()
@@ -156,9 +155,10 @@ void CPP_HandleGPIOInterrupt(uint16_t GPIO_Pin)
   LightsState.HandlePress(GPIO_Pin);
 }
 
-void CPP_HandleCANRxInterrupt()
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {
   CANController.SetRxFlag();
+  HAL_CAN_DeactivateNotification(hcan, CAN_IT_RX_FIFO0_MSG_PENDING);
 }
 
 void HandleEco()

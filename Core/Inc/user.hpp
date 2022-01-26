@@ -21,7 +21,7 @@ SolarGators::DataModules::MitsubaRx0 McRx0(SolarGators::DataModuleInfo::MOTORRX0
 // Forward Declares
 extern SPI_HandleTypeDef hspi1;
 extern CAN_HandleTypeDef hcan;
-SolarGators::Drivers::CANDriver CANController(&hcan, 1);
+SolarGators::Drivers::CANDriver CANController(&hcan, 0);
 
 // Buttons
 // Left Side
