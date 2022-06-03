@@ -1,0 +1,24 @@
+gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+ILI9341.cpp:33:1:SolarGators::Drivers::ILI9341::ILI9341(int16_t, int16_t)	16	static
+ILI9341.cpp:45:1:SolarGators::Drivers::ILI9341::~ILI9341()	16	static
+ILI9341.cpp:45:1:virtual SolarGators::Drivers::ILI9341::~ILI9341()	16	static
+ILI9341.cpp:50:6:void SolarGators::Drivers::ILI9341::Init()	40	static
+ILI9341.cpp:91:13:void SolarGators::Drivers::ILI9341::Write(uint8_t)	16	static
+ILI9341.cpp:123:6:void SolarGators::Drivers::ILI9341::TransmitCmd(uint8_t)	16	static
+ILI9341.cpp:134:6:void SolarGators::Drivers::ILI9341::Transmit8bitData(uint8_t)	16	static
+ILI9341.cpp:142:6:void SolarGators::Drivers::ILI9341::Transmit16bitData(uint16_t)	16	static
+ILI9341.cpp:152:6:void SolarGators::Drivers::ILI9341::Transmit32bitData(uint32_t)	16	static
+ILI9341.cpp:164:6:char SolarGators::Drivers::ILI9341::SetWindow(uint16_t, uint16_t, uint16_t, uint16_t)	32	static
+ILI9341.cpp:192:6:char SolarGators::Drivers::ILI9341::DrawPixel(uint16_t, uint16_t, uint16_t)	40	static
+ILI9341.cpp:207:6:void SolarGators::Drivers::ILI9341::SendColor565(uint16_t, uint32_t)	24	static
+ILI9341.cpp:222:6:void SolarGators::Drivers::ILI9341::Flood(uint16_t, uint32_t)	32	static
+ILI9341.cpp:265:6:void SolarGators::Drivers::ILI9341::ClearScreen(uint16_t)	24	static
+ILI9341.cpp:275:6:void SolarGators::Drivers::ILI9341::DrawFastHLine(uint16_t, uint16_t, uint16_t, uint16_t)	48	static
+ILI9341.cpp:297:6:void SolarGators::Drivers::ILI9341::DrawFastVLine(uint16_t, uint16_t, uint16_t, uint16_t)	48	static
+ILI9341.cpp:318:6:void SolarGators::Drivers::ILI9341::SetRotation(uint8_t)	24	static
+ILI9341.cpp:350:6:void SolarGators::Drivers::ILI9341::SetTextSize(uint8_t)	16	static
+ILI9341.cpp:355:6:void SolarGators::Drivers::ILI9341::DrawChar(int16_t, int16_t, unsigned char, uint16_t, uint8_t)	56	static
+ILI9341.cpp:361:6:void SolarGators::Drivers::ILI9341::DrawChar(int16_t, int16_t, unsigned char, uint16_t, uint16_t, uint8_t, uint8_t)	56	static
+ILI9341.cpp:390:6:void SolarGators::Drivers::ILI9341::DrawText(uint16_t, uint16_t, const char*, uint16_t)	48	static
+ILI9341.cpp:419:6:void SolarGators::Drivers::ILI9341::DrawRect(uint16_t, uint16_t, uint16_t, uint16_t, uint16_t)	48	static
+ILI9341.cpp:427:6:void SolarGators::Drivers::ILI9341::FillRect(uint16_t, uint16_t, uint16_t, uint16_t, uint16_t)	48	static

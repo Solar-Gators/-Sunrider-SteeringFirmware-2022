@@ -1,6 +1,10 @@
 // File for User C++ Code
 
 #include "user.hpp"
+#include "etl/to_string.h"
+#include "etl/format_spec.h"
+#include "etl/string_utilities.h"
+#include "UI.hpp"
 
 using namespace SolarGators;
 
@@ -40,6 +44,8 @@ osTimerAttr_t can_tx_timer_attr =
     .name = "CAN Tx"
 };
 
+uint32_t PULSE = 500;
+
 void CPP_UserSetup(void)
 {
   // Setup Actions
@@ -74,8 +80,8 @@ void CPP_UserSetup(void)
   LightsState.AddButton(&cruise);
   LightsState.AddButton(&reverse);
   // Load the CAN Controller
-  CANController.AddRxModule(&Bms);
-  CANController.AddRxModule(&McRx0);
+  CANController.AddRxModule(&BMS_Rx_0);
+  CANController.AddRxModule(&Motor_Rx_0);
   // Start Thread that Handles Turn Signal LEDs
   signal_timer_id = osTimerNew((osThreadFunc_t)UpdateSignals, osTimerPeriodic, NULL, &signal_timer_attr);
   if (signal_timer_id == NULL)
@@ -120,25 +126,22 @@ void UpdateSignals()
 
 void UpdateUI()
 {
-  HY28b lcd(&hspi1, false);
-  Drivers::UI gui(HY28b::BLACK, lcd);
-  uint8_t i = 0;
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
+  // LCD
+  SolarGators::Drivers::ILI9341 Display(ILI9341_TFTWIDTH, ILI9341_TFTHEIGHT);
+  Display.Init();
+  // This will initialize the UI
+  SolarGators::Drivers::UI ui(Display);
+  float test_val = 0.0;
+  for (int i = 0; i < 1000; ++i)
+  {
+    ui.UpdateSpeed(test_val);
+    test_val += 0.1;
+    osDelay(50);
+  }
+
   while(1)
   {
-    // TODO: Remove this was for testing
-    gui.UpdateSpeed(i++);
-    if(i > 99)
-      i = 0;
-    osMutexAcquire(McRx0.mutex_id_, osWaitForever);
-    // Get Speed from Mitsuba
-    uint16_t rpm = McRx0.GetMotorRPM();
-    // Get Current from Mitsuba
-    gui.UpdateCurrent(McRx0.GetBatteryCurrent());
-    osMutexRelease(McRx0.mutex_id_);
-    // Get SOC from BMS
-    osMutexAcquire(Bms.mutex_id_, osWaitForever);
-    gui.UpdateSOC(Bms.GetPackVoltage());
-    osMutexRelease(Bms.mutex_id_);
     osDelay(100);
   }
 }

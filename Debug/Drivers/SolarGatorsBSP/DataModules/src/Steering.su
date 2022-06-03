@@ -1,7 +1,7 @@
-DataModule.hpp:19:3:SolarGators::DataModules::DataModule::DataModule(uint32_t, uint32_t, bool)	24	static
+DataModule.hpp:19:3:SolarGators::DataModules::DataModule::DataModule(uint32_t, uint16_t, uint32_t, uint16_t, bool, bool)	24	static
 DataModule.hpp:24:11:SolarGators::DataModules::DataModule::~DataModule()	16	static
 DataModule.hpp:24:11:virtual SolarGators::DataModules::DataModule::~DataModule()	16	static
-Steering.cpp:17:3:SolarGators::DataModules::Steering::Steering()	16	static
+Steering.cpp:17:3:SolarGators::DataModules::Steering::Steering()	32	static
 Steering.cpp:30:3:SolarGators::DataModules::Steering::~Steering()	16	static
 Steering.cpp:30:3:virtual SolarGators::DataModules::Steering::~Steering()	16	static
 Steering.cpp:32:8:bool SolarGators::DataModules::Steering::GetLeftTurnStatus() const	16	static

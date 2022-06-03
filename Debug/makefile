@@ -14,6 +14,7 @@ RM := rm -rf
 -include Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/subdir.mk
 -include Middlewares/Third_Party/FreeRTOS/Source/subdir.mk
 -include Drivers/SolarGatorsBSP/Drivers/src/subdir.mk
+-include Drivers/SolarGatorsBSP/Drivers/inc/subdir.mk
 -include Drivers/SolarGatorsBSP/DataModules/src/subdir.mk
 -include Drivers/STM32F0xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk

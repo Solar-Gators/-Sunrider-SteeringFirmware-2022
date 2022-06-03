@@ -87,7 +87,7 @@ void NMI_Handler(void)
 void HardFault_Handler(void)
 {
   /* USER CODE BEGIN HardFault_IRQn 0 */
-  HAL_GPIO_WritePin(ERROR_LED_GPIO_Port, ERROR_LED_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(ERROR_GPIO_Port, ERROR_Pin, GPIO_PIN_SET);
   /* USER CODE END HardFault_IRQn 0 */
   while (1)
   {
@@ -111,8 +111,8 @@ void EXTI0_1_IRQHandler(void)
   /* USER CODE BEGIN EXTI0_1_IRQn 0 */
 
   /* USER CODE END EXTI0_1_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(Horn_Button_Pin);
-  HAL_GPIO_EXTI_IRQHandler(Cruise_Button_Pin);
+  HAL_GPIO_EXTI_IRQHandler(BOARD_OK_Pin);
+  HAL_GPIO_EXTI_IRQHandler(ERROR_Pin);
   /* USER CODE BEGIN EXTI0_1_IRQn 1 */
 
   /* USER CODE END EXTI0_1_IRQn 1 */
@@ -140,11 +140,11 @@ void EXTI4_15_IRQHandler(void)
   /* USER CODE BEGIN EXTI4_15_IRQn 0 */
 
   /* USER CODE END EXTI4_15_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(TP_IRQ_Pin);
-  HAL_GPIO_EXTI_IRQHandler(HL_Button_Pin);
+  HAL_GPIO_EXTI_IRQHandler(LCD_DATA6_Pin);
+  HAL_GPIO_EXTI_IRQHandler(LCD_DATA3_Pin);
   HAL_GPIO_EXTI_IRQHandler(Eco_Led_Pin);
   HAL_GPIO_EXTI_IRQHandler(Eco_Button_Pin);
-  HAL_GPIO_EXTI_IRQHandler(LT_Button_Pin);
+  HAL_GPIO_EXTI_IRQHandler(LCD_CD_Pin);
   HAL_GPIO_EXTI_IRQHandler(Haz_Button_Pin);
   HAL_GPIO_EXTI_IRQHandler(RT_Button_Pin);
   HAL_GPIO_EXTI_IRQHandler(Cruise_P_Pin);

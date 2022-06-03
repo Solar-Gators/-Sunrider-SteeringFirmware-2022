@@ -34,6 +34,7 @@ Core/Src \
 Core/Startup \
 Drivers/STM32F0xx_HAL_Driver/Src \
 Drivers/SolarGatorsBSP/DataModules/src \
+Drivers/SolarGatorsBSP/Drivers/inc \
 Drivers/SolarGatorsBSP/Drivers/src \
 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 \
 Middlewares/Third_Party/FreeRTOS/Source \

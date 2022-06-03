@@ -3,8 +3,6 @@
 #ifndef USER_HPP_
 #define USER_HPP_
 
-#include <HY28b.hpp>
-#include <UI.hpp>
 #include "main.h"
 #include "SteeringController.hpp"
 #include "Mitsuba.hpp"
@@ -12,15 +10,19 @@
 #include "DataModuleInfo.hpp"
 #include "Button.hpp"
 #include "CAN.hpp"
+#include "ILI9341.hpp"
+#include "ILI9341_CMD.hpp"
 
 
 SolarGators::DataModules::SteeringController LightsState;
 SolarGators::DataModules::MitsubaRequest McReq(SolarGators::DataModuleInfo::MOTORTX_RL_MSG_ID);
-SolarGators::DataModules::OrionBMS Bms(SolarGators::DataModuleInfo::Orion_Id);
-SolarGators::DataModules::MitsubaRx0 McRx0(SolarGators::DataModuleInfo::MOTORRX0_RL_MSG_ID);
+SolarGators::DataModules::OrionBMSRx0 BMS_Rx_0(SolarGators::DataModuleInfo::BMS_RX0_MSG_ID, 0);
+SolarGators::DataModules::MitsubaRx0 Motor_Rx_0(SolarGators::DataModuleInfo::MOTORRX0_RL_MSG_ID, 0x04);
 // Forward Declares
-extern SPI_HandleTypeDef hspi1;
 extern CAN_HandleTypeDef hcan;
+extern TIM_HandleTypeDef htim2;
+
+// CAN Driver
 SolarGators::Drivers::CANDriver CANController(&hcan, 0);
 
 // Buttons
