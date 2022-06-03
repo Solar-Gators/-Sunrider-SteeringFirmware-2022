@@ -17,18 +17,18 @@ functional.h:132:24:constexpr bool etl::less<T>::operator()(const T&, const T&) 
 algorithm.h:1117:12:constexpr const T& etl::min(const T&, const T&, TCompare) [with T = unsigned int; TCompare = etl::less<unsigned int>]	24	static
 string.h:54:9:etl::string<5>::~string()	16	static
 UI.cpp:13:6:void SolarGators::Drivers::InfoSquare::Draw(SolarGators::Drivers::ILI9341&)	56	static
-UI.cpp:23:6:void SolarGators::Drivers::InfoSquare::UpdateValue(SolarGators::Drivers::ILI9341&, etl::string<5>)	40	static
+UI.cpp:24:6:void SolarGators::Drivers::InfoSquare::UpdateValue(SolarGators::Drivers::ILI9341&, etl::string<5>&)	40	static
 UI.hpp:28:7:SolarGators::Drivers::InfoSquare::InfoSquare()	16	static
 UI.hpp:28:7:SolarGators::Drivers::InfoSquare::~InfoSquare()	16	static
 array.h:87:9:etl::array<SolarGators::Drivers::InfoSquare, 4>::array()	24	static
 array.h:87:9:etl::array<SolarGators::Drivers::InfoSquare, 4>::~array()	24	static
-UI.cpp:28:1:SolarGators::Drivers::UI::UI(SolarGators::Drivers::ILI9341&)	128	static
-UI.cpp:47:1:SolarGators::Drivers::UI::~UI()	16	static
-UI.cpp:52:6:void SolarGators::Drivers::UI::UpdateSquare(uint8_t, etl::string<5>)	24	static
-UI.cpp:57:6:void SolarGators::Drivers::UI::DrawSpeed()	32	static
+UI.cpp:30:1:SolarGators::Drivers::UI::UI(SolarGators::Drivers::ILI9341&)	128	static
+UI.cpp:49:1:SolarGators::Drivers::UI::~UI()	16	static
+UI.cpp:54:6:void SolarGators::Drivers::UI::UpdateSquare(uint8_t, etl::string<5>&)	24	static
+UI.cpp:62:6:void SolarGators::Drivers::UI::DrawSpeed()	32	static
 string.h:54:9:etl::string<4>::~string()	16	static
-UI.cpp:67:6:void SolarGators::Drivers::UI::UpdateSpeed(float)	64	static
-UI.cpp:74:6:void SolarGators::Drivers::UI::DrawTripCodes()	184	static
+UI.cpp:72:6:void SolarGators::Drivers::UI::UpdateSpeed(float)	64	static
+UI.cpp:81:6:void SolarGators::Drivers::UI::DrawTripCodes()	192	static
 flags.h:87:24:constexpr bool etl::flags<T, MASK>::test() const [with T pattern = 1; T = unsigned char; T MASK = 255]	16	static
 flags.h:87:24:constexpr bool etl::flags<T, MASK>::test() const [with T pattern = 2; T = unsigned char; T MASK = 255]	16	static
 flags.h:68:19:constexpr etl::flags<T, MASK>::flags() [with T = unsigned char; T MASK = 255]	16	static

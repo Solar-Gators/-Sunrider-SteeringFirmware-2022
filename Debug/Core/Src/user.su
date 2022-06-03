@@ -4,24 +4,52 @@ std_function.h:87:17:void* std::_Any_data::_M_access()	16	static
 std_function.h:88:17:const void* std::_Any_data::_M_access() const	16	static
 std_function.h:255:5:std::_Function_base::_Function_base()	16	static
 std_function.h:257:5:std::_Function_base::~_Function_base()	16	static
+cmath:260:3:constexpr float std::floor(float)	16	static
+cmath:584:3:constexpr bool std::isinf(float)	24	static
+cmath:611:3:constexpr bool std::isnan(float)	24	static
+cmath:1756:3:constexpr float std::round(float)	16	static
+memory.h:1865:15:void etl::memory_clear(volatile char*, size_t)	16	static
 DataModule.hpp:24:11:SolarGators::DataModules::DataModule::~DataModule()	16	static
 DataModule.hpp:24:11:virtual SolarGators::DataModules::DataModule::~DataModule()	16	static
 OrionBMS.hpp:19:5:SolarGators::DataModules::OrionBMSRx0::~OrionBMSRx0()	16	static
 OrionBMS.hpp:19:5:virtual SolarGators::DataModules::OrionBMSRx0::~OrionBMSRx0()	16	static
+OrionBMS.hpp:69:5:SolarGators::DataModules::OrionBMSRx2::~OrionBMSRx2()	16	static
+OrionBMS.hpp:69:5:virtual SolarGators::DataModules::OrionBMSRx2::~OrionBMSRx2()	16	static
+OrionBMS.hpp:111:5:SolarGators::DataModules::OrionBMSRx4::~OrionBMSRx4()	16	static
+OrionBMS.hpp:111:5:virtual SolarGators::DataModules::OrionBMSRx4::~OrionBMSRx4()	16	static
+basic_string.h:265:10:bool etl::string_base::is_secure() const	16	static
+basic_string.h:276:5:etl::string_base::string_base(etl::string_base::size_type)	16	static
+flags.h:111:37:constexpr etl::flags<T, MASK>& etl::flags<T, MASK>::set(bool) [with T pattern = 1; T = unsigned char; T MASK = 255]	16	static
+basic_string.h:286:10:void etl::string_base::set_truncated(bool)	16	static
+basic_string.h:295:5:etl::string_base::~string_base()	16	static
+algorithm.h:1125:12:constexpr const T& etl::min(const T&, const T&) [with T = unsigned int]	24	static
+functional.h:132:24:constexpr bool etl::less<T>::operator()(const T&, const T&) const [with T = unsigned int]	24	static
+algorithm.h:1117:12:constexpr const T& etl::min(const T&, const T&, TCompare) [with T = unsigned int; TCompare = etl::less<unsigned int>]	24	static
 user.cpp:49:6:void CPP_UserSetup()	208	static
 user.cpp:108:6:void UpdateSignals()	8	static
-user.cpp:127:6:void UpdateUI()	248	static
-user.cpp:149:6:void SendCanMsgs()	8	static
-user.cpp:156:6:void CPP_HandleGPIOInterrupt(uint16_t)	16	static
-user.cpp:161:6:void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef*)	16	static
-user.cpp:167:6:void HandleEco()	8	static
-user.cpp:172:6:void HandleHeadLights()	8	static
-user.cpp:177:6:void HandleCruise()	8	static
-user.cpp:182:6:void HandleReverse()	8	static
+string.h:54:9:etl::string<5>::~string()	16	static
+user.cpp:127:6:void UpdateUI()	272	static
+user.cpp:161:6:void SendCanMsgs()	8	static
+user.cpp:168:6:void CPP_HandleGPIOInterrupt(uint16_t)	16	static
+user.cpp:173:6:void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef*)	16	static
+user.cpp:179:6:void HandleEco()	8	static
+user.cpp:184:6:void HandleHeadLights()	8	static
+user.cpp:189:6:void HandleCruise()	8	static
+user.cpp:194:6:void HandleReverse()	8	static
+flags.h:87:24:constexpr bool etl::flags<T, MASK>::test() const [with T pattern = 2; T = unsigned char; T MASK = 255]	16	static
+flags.h:68:19:constexpr etl::flags<T, MASK>::flags() [with T = unsigned char; T MASK = 255]	16	static
+basic_string.h:2271:5:etl::ibasic_string<T>::ibasic_string(T*, etl::string_base::size_type) [with T = char]	24	static
+basic_string.h:2372:5:etl::ibasic_string<T>::~ibasic_string() [with T = char]	16	static
+basic_string.h:2280:10:void etl::ibasic_string<T>::initialise() [with T = char]	16	static
 functional:808:5:) [with _Func = void (SolarGators::DataModules::SteeringController::*)(); _BoundArgs = {SolarGators::DataModules::SteeringController*}]	32	static
 std_function.h:369:11:std::function<void()>::~function()	16	static
 std_function.h:523:2:)>::operator=(_Functor&&) [with _Functor = std::_Bind<void (SolarGators::DataModules::SteeringController::*(SolarGators::DataModules::SteeringController*))()>; _Res = void; _ArgTypes = {}]	56	static
 std_function.h:523:2:)>::operator=(_Functor&&) [with _Functor = void (&)(); _Res = void; _ArgTypes = {}]	40	static
+string.h:68:5:etl::string<MAX_SIZE_>::string() [with unsigned int MAX_SIZE_ = 5]	16	static
+to_string.h:63:5:typename etl::enable_if<((! etl::is_same<T, etl::ibasic_string<char> >::value) && (! etl::is_same<T, etl::basic_string_view<char> >::value)), const etl::ibasic_string<char>&>::type etl::to_string(T, etl::istring&, const format_spec&, bool) [with T = float]	24	static
+basic_string.h:2343:10:void etl::ibasic_string<T>::cleanup() [with T = char]	16	static
+iterator.h:219:77:typename std::iterator_traits<_Iterator>::difference_type etl::distance(TIterator, TIterator) [with TIterator = const char*]	16	static
+algorithm.h:748:8:void etl::fill(TIterator, TIterator, const TValue&) [with TIterator = char*; TValue = char]	24	static
 move.h:74:5:constexpr _Tp&& std::forward(typename std::remove_reference<_Tp>::type&) [with _Tp = void (SolarGators::DataModules::SteeringController::*)()]	16	static
 move.h:74:5:constexpr _Tp&& std::forward(typename std::remove_reference<_Tp>::type&) [with _Tp = SolarGators::DataModules::SteeringController*]	16	static
 functional:466:11:) [with _Args = {SolarGators::DataModules::SteeringController*}; _Functor = void (SolarGators::DataModules::SteeringController::*)(); _Bound_args = {SolarGators::DataModules::SteeringController*}]	32	static
@@ -32,6 +60,11 @@ std_function.h:667:7:)>::function(_Functor) [with _Functor = std::_Bind<void (So
 std_function.h:547:12:)>&) [with _Res = void; _ArgTypes = {}]	16	static
 move.h:74:5:constexpr _Tp&& std::forward(typename std::remove_reference<_Tp>::type&) [with _Tp = void (&)()]	16	static
 std_function.h:667:7:)>::function(_Functor) [with _Functor = void (*)(); <template-parameter-2-2> = void; <template-parameter-2-3> = void; _Res = void; _ArgTypes = {}]	24	static
+to_string_helper.h:618:7:typename etl::enable_if<etl::is_floating_point<T>::value, const TIString&>::type etl::private_to_string::to_string(T, TIString&, const etl::basic_format_spec<TIString>&, bool) [with T = float; TIString = etl::ibasic_string<char>]	24	static
+memory.h:1906:8:void etl::memory_clear_range(volatile T*, volatile T*) [with T = char]	24	static
+basic_string.h:338:14:T* etl::ibasic_string<T>::begin() [with T = char]	16	static
+stl_iterator_base_funcs.h:138:5:typename std::iterator_traits<_Iterator>::difference_type std::distance(_InputIterator, _InputIterator) [with _InputIterator = const char*]	32	static
+stl_algobase.h:742:5:void std::fill(_ForwardIterator, _ForwardIterator, const _Tp&) [with _ForwardIterator = char*; _Tp = char]	32	static
 move.h:99:5:constexpr typename std::remove_reference<_Tp>::type&& std::move(_Tp&&) [with _Tp = void (SolarGators::DataModules::SteeringController::*&)()]	16	static
 tuple:626:19: (_Elements) >= 1)), bool>::type <anonymous> = true; _Elements = {SolarGators::DataModules::SteeringController*}]	24	static
 move.h:99:5:constexpr typename std::remove_reference<_Tp>::type&& std::move(_Tp&&) [with _Tp = std::tuple<SolarGators::DataModules::SteeringController*>&]	16	static
@@ -52,6 +85,17 @@ move.h:99:5:constexpr typename std::remove_reference<_Tp>::type&& std::move(_Tp&
 std_function.h:222:2:static void std::_Function_base::_Base_manager<_Functor>::_M_init_functor(std::_Any_data&, _Functor&&) [with _Functor = void (*)()]	32	static
 std_function.h:298:7:) [with _Functor = void (*)(); _ArgTypes = {}]	16	static
 std_function.h:196:2:static bool std::_Function_base::_Base_manager<_Functor>::_M_manager(std::_Any_data&, const std::_Any_data&, std::_Manager_operation) [with _Functor = void (*)()]	40	static
+basic_format_spec.h:365:28:constexpr uint32_t etl::basic_format_spec<TString>::get_precision() const [with TString = etl::ibasic_string<char>]	16	static
+basic_format_spec.h:356:40:constexpr etl::basic_format_spec<TString>& etl::basic_format_spec<TString>::precision(uint32_t) [with TString = etl::ibasic_string<char>]	16	static
+basic_format_spec.h:428:40:constexpr etl::basic_format_spec<TString>& etl::basic_format_spec<TString>::right() [with TString = etl::ibasic_string<char>]	16	static
+absolute.h:43:5:constexpr typename etl::enable_if<etl::is_signed<T>::value, T>::type etl::absolute(T) [with T = float]	16	static
+to_string_helper.h:295:10:void etl::private_to_string::add_floating_point(T, TIString&, const etl::basic_format_spec<TIString>&, bool) [with T = float; TIString = etl::ibasic_string<char>]	120	static
+iterator.h:219:77:typename std::iterator_traits<_Iterator>::difference_type etl::distance(TIterator, TIterator) [with TIterator = volatile char*]	16	static
+memory.h:1893:8:void etl::memory_clear_range(volatile T*, size_t) [with T = char]	16	static
+stl_iterator_base_types.h:205:5:constexpr typename std::iterator_traits<_Iterator>::iterator_category std::__iterator_category(const _Iter&) [with _Iter = const char*]	16	static
+stl_iterator_base_funcs.h:98:5:constexpr typename std::iterator_traits<_Iterator>::difference_type std::__distance(_RandomAccessIterator, _RandomAccessIterator, std::random_access_iterator_tag) [with _RandomAccessIterator = const char*]	24	static
+stl_algobase.h:280:5:_Iterator std::__niter_base(_Iterator) [with _Iterator = char*]	16	static
+stl_algobase.h:721:5:typename __gnu_cxx::__enable_if<std::__is_byte<_Tp>::__value, void>::__type std::__fill_a(_Tp*, _Tp*, const _Tp&) [with _Tp = char]	32	static
 tuple:348:19:constexpr std::_Tuple_impl<_Idx, _Head>::_Tuple_impl(_UHead&&) [with _UHead = SolarGators::DataModules::SteeringController*; unsigned int _Idx = 0; _Head = SolarGators::DataModules::SteeringController*]	24	static
 tuple:334:7:static constexpr _Head& std::_Tuple_impl<_Idx, _Head>::_M_head(std::_Tuple_impl<_Idx, _Head>&) [with unsigned int _Idx = 0; _Head = SolarGators::DataModules::SteeringController*]	16	static
 tuple:132:19:constexpr std::_Head_base<_Idx, _Head, false>::_Head_base(_UHead&&) [with _UHead = SolarGators::DataModules::SteeringController*; unsigned int _Idx = 0; _Head = SolarGators::DataModules::SteeringController*]	16	static
@@ -66,6 +110,19 @@ std_function.h:151:2:static _Functor* std::_Function_base::_Base_manager<_Functo
 std_function.h:92:7:_Tp& std::_Any_data::_M_access() [with _Tp = void (**)()]	16	static
 std_function.h:165:2:static void std::_Function_base::_Base_manager<_Functor>::_M_clone(std::_Any_data&, const std::_Any_data&, std::true_type) [with _Functor = void (*)()]	32	static
 std_function.h:182:2:static void std::_Function_base::_Base_manager<_Functor>::_M_destroy(std::_Any_data&, std::true_type) [with _Functor = void (*)()]	16	static
+basic_string.h:791:10:void etl::ibasic_string<T>::clear() [with T = char]	16	static
+basic_string.h:356:14:T* etl::ibasic_string<T>::end() [with T = char]	16	static
+to_string_helper.h:226:10:void etl::private_to_string::add_nan_inf(bool, bool, TIString&) [with TIString = etl::ibasic_string<char>]	24	static
+basic_format_spec.h:262:40:constexpr etl::basic_format_spec<TString>& etl::basic_format_spec<TString>::base(uint32_t) [with TString = etl::ibasic_string<char>]	16	static
+basic_format_spec.h:292:40:constexpr etl::basic_format_spec<TString>& etl::basic_format_spec<TString>::decimal() [with TString = etl::ibasic_string<char>]	16	static
+basic_format_spec.h:338:40:constexpr etl::basic_format_spec<TString>& etl::basic_format_spec<TString>::width(uint32_t) [with TString = etl::ibasic_string<char>]	16	static
+basic_format_spec.h:392:40:constexpr etl::basic_format_spec<TString>& etl::basic_format_spec<TString>::fill(typename TString::value_type) [with TString = etl::ibasic_string<char>]	16	static
+negative.h:44:5:constexpr typename etl::enable_if<etl::is_signed<T>::value, bool>::type etl::is_negative(T) [with T = float]	24	static
+to_string_helper.h:272:10:void etl::private_to_string::add_integral_and_fractional(uint64_t, uint64_t, TIString&, const etl::basic_format_spec<TIString>&, const etl::basic_format_spec<TIString>&, bool) [with TIString = etl::ibasic_string<char>]	40	static
+basic_format_spec.h:347:28:constexpr uint32_t etl::basic_format_spec<TString>::get_width() const [with TString = etl::ibasic_string<char>]	16	static
+basic_format_spec.h:419:24:constexpr bool etl::basic_format_spec<TString>::is_left() const [with TString = etl::ibasic_string<char>]	16	static
+to_string_helper.h:69:10:void etl::private_to_string::add_alignment(TIString&, typename TIString::iterator, const etl::basic_format_spec<TIString>&) [with TIString = etl::ibasic_string<char>]	40	static
+stl_iterator_base_funcs.h:138:5:typename std::iterator_traits<_Iterator>::difference_type std::distance(_InputIterator, _InputIterator) [with _InputIterator = volatile char*]	32	static
 tuple:160:7:static constexpr _Head& std::_Head_base<_Idx, _Head, false>::_M_head(std::_Head_base<_Idx, _Head, false>&) [with unsigned int _Idx = 0; _Head = SolarGators::DataModules::SteeringController*]	16	static
 std_function.h:97:7:const _Tp& std::_Any_data::_M_access() const [with _Tp = std::_Bind<void (SolarGators::DataModules::SteeringController::*(SolarGators::DataModules::SteeringController*))()>*]	16	static
 tuple:1482:5:) [with _Elements = {}]	8	static
@@ -74,13 +131,43 @@ std_function.h:97:7:const _Tp& std::_Any_data::_M_access() const [with _Tp = con
 std_function.h:97:7:const _Tp& std::_Any_data::_M_access() const [with _Tp = void (*)()]	16	static
 move.h:47:5:constexpr _Tp* std::__addressof(_Tp&) [with _Tp = void (* const)()]	16	static
 std_function.h:92:7:_Tp& std::_Any_data::_M_access() [with _Tp = void (*)()]	16	static
+range_access.h:87:5:constexpr _Tp* std::begin(_Tp (&)[_Nm]) [with _Tp = const char; unsigned int _Nm = 3]	16	static
+range_access.h:97:5:constexpr _Tp* std::end(_Tp (&)[_Nm]) [with _Tp = const char; unsigned int _Nm = 3]	16	static
+basic_string.h:1057:14:T* etl::ibasic_string<T>::insert(etl::ibasic_string<T>::const_iterator, TIterator, TIterator) [with TIterator = const char*; T = char]	64	static
+basic_format_spec.h:311:28:constexpr uint32_t etl::basic_format_spec<TString>::get_base() const [with TString = etl::ibasic_string<char>]	16	static
+absolute.h:53:5:constexpr typename etl::enable_if<etl::is_unsigned<T>::value, T>::type etl::absolute(T) [with T = long long unsigned int]	16	static
+basic_format_spec.h:383:24:constexpr bool etl::basic_format_spec<TString>::is_upper_case() const [with TString = etl::ibasic_string<char>]	16	static
+basic_format_spec.h:329:24:constexpr bool etl::basic_format_spec<TString>::is_show_base() const [with TString = etl::ibasic_string<char>]	16	static
+to_string_helper.h:142:10:void etl::private_to_string::add_integral(T, TIString&, const etl::basic_format_spec<TIString>&, bool, bool) [with T = long long unsigned int; TIString = etl::ibasic_string<char>]	56	static
+basic_string.h:801:10:void etl::ibasic_string<T>::push_back(T) [with T = char]	16	static
+iterator.h:219:77:typename std::iterator_traits<_Iterator>::difference_type etl::distance(TIterator, TIterator) [with TIterator = char*]	16	static
+basic_format_spec.h:401:48:constexpr typename TString::value_type etl::basic_format_spec<TString>::get_fill() const [with TString = etl::ibasic_string<char>]	16	static
+basic_string.h:970:14:T* etl::ibasic_string<T>::insert(etl::ibasic_string<T>::const_iterator, etl::string_base::size_type, T) [with T = char]	64	static
+stl_iterator_base_funcs.h:138:5:typename std::iterator_traits<_Iterator>::difference_type std::distance(_InputIterator, _InputIterator) [with _InputIterator = char*]	32	static
+stl_iterator_base_types.h:205:5:constexpr typename std::iterator_traits<_Iterator>::iterator_category std::__iterator_category(const _Iter&) [with _Iter = volatile char*]	16	static
+stl_iterator_base_funcs.h:98:5:constexpr typename std::iterator_traits<_Iterator>::difference_type std::__distance(_RandomAccessIterator, _RandomAccessIterator, std::random_access_iterator_tag) [with _RandomAccessIterator = volatile char*]	24	static
 tuple:1320:5:>&) [with unsigned int __i = 0; _Elements = {SolarGators::DataModules::SteeringController*}]	16	static
 functional:363:2:_CVArg&& std::_Mu<_Arg, false, false>::operator()(_CVArg&&, _Tuple&) const volatile [with _CVArg = SolarGators::DataModules::SteeringController*&; _Tuple = std::tuple<>; _Arg = SolarGators::DataModules::SteeringController*]	24	static
 invoke.h:89:5:) [with _Callable = void (SolarGators::DataModules::SteeringController::*&)(); _Args = {SolarGators::DataModules::SteeringController*&}]	32	static
+basic_string.h:2387:14:T* etl::ibasic_string<T>::to_iterator(etl::ibasic_string<T>::const_iterator) const [with T = char]	16	static
+algorithm.h:316:14:TIterator2 etl::copy_backward(TIterator1, TIterator1, TIterator2) [with TIterator1 = char*; TIterator2 = char*]	24	static
+algorithm.h:569:5:constexpr typename etl::enable_if<etl::is_pointer<T>::value, void>::type etl::reverse(TIterator, TIterator) [with TIterator = char*]	16	static
+basic_string.h:374:20:const T* etl::ibasic_string<T>::cbegin() const [with T = char]	16	static
+stl_iterator_base_types.h:205:5:constexpr typename std::iterator_traits<_Iterator>::iterator_category std::__iterator_category(const _Iter&) [with _Iter = char*]	16	static
+stl_iterator_base_funcs.h:98:5:constexpr typename std::iterator_traits<_Iterator>::difference_type std::__distance(_RandomAccessIterator, _RandomAccessIterator, std::random_access_iterator_tag) [with _RandomAccessIterator = char*]	24	static
 tuple:1309:5:>&) [with unsigned int __i = 0; _Head = SolarGators::DataModules::SteeringController*; _Tail = {}]	16	static
 move.h:74:5:constexpr _Tp&& std::forward(typename std::remove_reference<_Tp>::type&) [with _Tp = SolarGators::DataModules::SteeringController*&]	16	static
 move.h:74:5:constexpr _Tp&& std::forward(typename std::remove_reference<_Tp>::type&) [with _Tp = void (SolarGators::DataModules::SteeringController::*&)()]	16	static
 invoke.h:70:5:) [with _Res = void; _MemFun = void (SolarGators::DataModules::SteeringController::*&)(); _Tp = SolarGators::DataModules::SteeringController*&; _Args = {}]	24	static
-user.cpp:186:1:void __static_initialization_and_destruction_0(int, int)	32	static
-user.cpp:186:1:cpp)	8	static
-user.cpp:186:1:cpp)	8	static
+stl_algobase.h:641:5:_BI2 std::copy_backward(_BI1, _BI1, _BI2) [with _BI1 = char*; _BI2 = char*]	32	static
+algorithm.h:83:8:constexpr void etl::iter_swap(TIterator1, TIterator2) [with TIterator1 = char*; TIterator2 = char*]	16	static
+stl_algobase.h:295:5:_Iterator std::__niter_wrap(const _Iterator&, _Iterator) [with _Iterator = char*]	16	static
+cpp_type_traits.h:428:5:_Iterator std::__miter_base(_Iterator) [with _Iterator = char*]	16	static
+stl_algobase.h:613:5:_BI2 std::__copy_move_backward_a2(_BI1, _BI1, _BI2) [with bool _IsMove = false; _BI1 = char*; _BI2 = char*]	32	static
+move.h:99:5:constexpr typename std::remove_reference<_Tp>::type&& std::move(_Tp&&) [with _Tp = char&]	16	static
+move.h:182:5:typename std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<_Tp> >, std::is_move_constructible<_Tp>, std::is_move_assignable<_Tp> >::value>::type std::swap(_Tp&, _Tp&) [with _Tp = char]	32	static
+stl_algobase.h:595:5:_BI2 std::__copy_move_backward_a(_BI1, _BI1, _BI2) [with bool _IsMove = false; _BI1 = char*; _BI2 = char*]	32	static
+stl_algobase.h:577:2:static _Tp* std::__copy_move_backward<_IsMove, true, std::random_access_iterator_tag>::__copy_move_b(const _Tp*, const _Tp*, _Tp*) [with _Tp = char; bool _IsMove = false]	32	static
+user.cpp:198:1:void __static_initialization_and_destruction_0(int, int)	32	static
+user.cpp:198:1:cpp)	8	static
+user.cpp:198:1:cpp)	8	static

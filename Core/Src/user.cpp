@@ -132,17 +132,29 @@ void UpdateUI()
   Display.Init();
   // This will initialize the UI
   SolarGators::Drivers::UI ui(Display);
-  float test_val = 0.0;
-  for (int i = 0; i < 1000; ++i)
-  {
-    ui.UpdateSpeed(test_val);
-    test_val += 0.1;
-    osDelay(50);
-  }
+
+  // Set Format
+  static constexpr etl::format_spec format(10,5,1,false,false,false,false,'0');
 
   while(1)
   {
-    osDelay(100);
+    etl::string<5> buff;
+    // Update Accel
+
+    // Update SOC
+    etl::to_string(BMS_Rx_4.getPackSoc(), buff, format, false);
+    ui.UpdateSquare(1, buff);
+    // Update Voltage
+    etl::to_string(BMS_Rx_0.getPackSumVolt(), buff, format, false);
+    ui.UpdateSquare(2, buff);
+    // Update Current
+    etl::to_string(BMS_Rx_2.getPackCurrent(), buff, format, false);
+    ui.UpdateSquare(3, buff);
+    // Update Speed
+    float wheel_diam = 3;
+    float speed = Motor_Rx_0.GetMotorRPM() * wheel_diam;
+    ui.UpdateSpeed(speed);
+    osDelay(40); // Aim for 20hz
   }
 }
 
