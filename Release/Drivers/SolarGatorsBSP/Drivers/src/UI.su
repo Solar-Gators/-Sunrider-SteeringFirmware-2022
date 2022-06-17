@@ -1,7 +1,0 @@
-UI.cpp:18:1:SolarGators::Drivers::UI::~UI()	0	static
-UI.cpp:18:1:virtual SolarGators::Drivers::UI::~UI()	8	static
-UI.cpp:13:1:SolarGators::Drivers::UI::UI(uint16_t, HY28b&)	0	static
-UI.cpp:23:6:void SolarGators::Drivers::UI::UpdateSpeed(uint8_t)	0	static
-UI.cpp:29:6:void SolarGators::Drivers::UI::UpdateCurrent(uint8_t)	0	static
-UI.cpp:35:6:void SolarGators::Drivers::UI::UpdateSOC(uint8_t)	0	static
-UI.cpp:42:6:void SolarGators::Drivers::UI::UpdateDisplayValue(point_t, char*, char*)	8	static

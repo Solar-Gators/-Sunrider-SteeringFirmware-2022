@@ -1,7 +1,0 @@
-LED.cpp:17:1:SolarGators::Drivers::LED::~LED()	0	static
-LED.cpp:17:1:virtual SolarGators::Drivers::LED::~LED()	8	static
-LED.cpp:22:6:void SolarGators::Drivers::LED::TurnOn()	8	static
-LED.cpp:27:6:void SolarGators::Drivers::LED::TurnOff()	8	static
-LED.cpp:12:1:SolarGators::Drivers::LED::LED(const char*, GPIO_TypeDef*, uint16_t)	8	static
-LED.cpp:32:6:void SolarGators::Drivers::LED::Toggle()	8	static
-LED.cpp:37:6:void SolarGators::Drivers::LED::UpdateLed()	8	static
