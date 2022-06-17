@@ -45,6 +45,10 @@ osTimerAttr_t can_tx_timer_attr =
 };
 
 uint32_t PULSE = 500;
+// Wheel Diamerter in miles
+static constexpr float WHEEL_DIAM_IN = 23.071;
+static constexpr float WHEEL_DIAM_FT = WHEEL_DIAM_IN / 12;
+static constexpr float WHEEL_DIAM_MI = WHEEL_DIAM_IN / 63360;
 
 void CPP_UserSetup(void)
 {
@@ -151,8 +155,7 @@ void UpdateUI()
     etl::to_string(BMS_Rx_2.getPackCurrent(), buff, format, false);
     ui.UpdateSquare(3, buff);
     // Update Speed
-    float wheel_diam = 3;
-    float speed = Motor_Rx_0.GetMotorRPM() * wheel_diam;
+    float speed = Motor_Rx_0.GetMotorRPM() * 60 * WHEEL_DIAM_MI;
     ui.UpdateSpeed(speed);
     osDelay(40); // Aim for 20hz
   }
