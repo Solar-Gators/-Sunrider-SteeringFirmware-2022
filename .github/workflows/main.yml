@@ -27,7 +27,7 @@ jobs:
 
       - uses: John-Carr/STM32-Infrastructure@main
         with: 
-          project-path: './' 
+          project-path: 'SteeringFirmware' 
           project-target: 'SteeringFirmware'
       - uses: actions/upload-artifact@v3
         with:
