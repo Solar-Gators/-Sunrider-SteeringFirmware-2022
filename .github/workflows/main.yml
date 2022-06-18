@@ -25,7 +25,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - uses: John-Carr/STM32-Infrastructure@v1
+      - uses: John-Carr/STM32-Infrastructure@main
         with: 
-          project-path: './' 
+          project-path: './SteeringFirmware' 
           project-target: 'SteeringFirmware'
+      - uses: actions/upload-artifact@v3
+        with:
+          name: 'Release Binary'
+          path: ./Release/*.elf
