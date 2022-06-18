@@ -31,5 +31,5 @@ jobs:
           project-target: 'SteeringFirmware'
       - uses: actions/upload-artifact@v3
         with:
-          name: SteeringFirmware.elf
-          path: ./Release/
+          name: 'Release Binary'
+          path: ./Release/*.elf
