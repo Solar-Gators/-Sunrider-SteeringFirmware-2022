@@ -55,20 +55,22 @@ void CPP_UserSetup(void)
   // Setup Actions
   // Note: These binds really abuse the stack and we should figure out a way to avoid them
   //       since we are heavily constrained.
+  // Note: No longer using binds, using etl::delegate should solve our stack problem but still
+  //       needs to be tested. This is compile time determined so hoping for better performance also.
   {
     using namespace SolarGators::DataModules;
     // Left Side
-    left_turn.action_ = std::bind(&SteeringController::ToggleLeftTurnSignal, &LightsState);
-    cruise_minus.action_ = std::bind(&SteeringController::DecreaseCruiseSpeed, &LightsState);
-    eco.action_ = HandleEco;
-    headlights.action_ = HandleHeadLights;
-    hazards.action_ = std::bind(&SteeringController::ToggleHazards, &LightsState);
+    left_turn.action_ = etl::delegate<void(void)>::create<SteeringController, LightsState, &SteeringController::ToggleLeftTurnSignal>();
+    cruise_minus.action_ = etl::delegate<void(void)>::create<SteeringController, LightsState, &SteeringController::DecreaseCruiseSpeed>();
+    eco.action_ = etl::delegate<void(void)>::create<HandleEco>();
+    headlights.action_ = etl::delegate<void(void)>::create<HandleHeadLights>();
+    hazards.action_ = etl::delegate<void(void)>::create<SteeringController, LightsState, &SteeringController::ToggleHazards>();
     // Right Side
-    right_turn.action_ = std::bind(&SteeringController::ToggleRightTurnSignal, &LightsState);
-    cruise_plus.action_ = std::bind(&SteeringController::IncreaseCruiseSpeed, &LightsState);
-    horn.action_ = std::bind(&SteeringController::ToggleHorn, &LightsState);
-    cruise.action_ = HandleCruise;
-    reverse.action_ = HandleReverse;
+    right_turn.action_ = etl::delegate<void(void)>::create<SteeringController, LightsState, &SteeringController::ToggleRightTurnSignal>();
+    cruise_plus.action_ = etl::delegate<void(void)>::create<SteeringController, LightsState, &SteeringController::IncreaseCruiseSpeed>();
+    horn.action_ = etl::delegate<void(void)>::create<SteeringController, LightsState, &SteeringController::ToggleHorn>();
+    cruise.action_ = etl::delegate<void(void)>::create<HandleCruise>();
+    reverse.action_ = etl::delegate<void(void)>::create<HandleReverse>();
   }
   // Add to Button Group
   // Left side

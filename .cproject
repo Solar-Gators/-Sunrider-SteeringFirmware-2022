@@ -214,8 +214,8 @@
 					<fileInfo id="com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.release.1763254247.297094887" name="UI.hpp" rcbsApplicability="disable" resourcePath="Drivers/SolarGatorsBSP/Drivers/inc/UI.hpp" toolsToInvoke=""/>
 					<fileInfo id="com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.release.1763254247.148956943" name="MCP33151.hpp" rcbsApplicability="disable" resourcePath="Drivers/SolarGatorsBSP/Drivers/inc/MCP33151.hpp" toolsToInvoke=""/>
 					<sourceEntries>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
 						<entry excluding="SolarGatorsBSP/Drivers/src/MCP33151.cpp|SolarGatorsBSP/Drivers/inc/MCP33151.hpp|SolarGatorsBSP/Drivers/inc/AsciiLib.h|SolarGatorsBSP/Drivers/inc/HY28b.hpp|SolarGatorsBSP/Drivers/src/Radio.cpp|SolarGatorsBSP/Drivers/src/PitComms.cpp|SolarGatorsBSP/Drivers/src/RFD900x.cpp|SolarGatorsBSP/Drivers/src/LTC2630.cpp|SolarGatorsBSP/Drivers/src/HY28b.cpp|SolarGatorsBSP/etl/test|SolarGatorsBSP/etl/examples|SolarGatorsBSP/etl/arduino|SolarGatorsDrivers/CAN" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Middlewares"/>
 					</sourceEntries>
 				</configuration>

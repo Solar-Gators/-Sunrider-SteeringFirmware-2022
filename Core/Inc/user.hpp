@@ -33,13 +33,13 @@ SolarGators::Drivers::Button left_turn    ("Left Turn", LT_Button_GPIO_Port, LT_
 SolarGators::Drivers::Button cruise_minus ("Cruise Minus", Cruise_M_GPIO_Port, Cruise_M_Pin);
 SolarGators::Drivers::Button eco          ("Eco Mode", Eco_Button_GPIO_Port, Eco_Button_Pin);
 SolarGators::Drivers::Button headlights   ("Headlights", HL_Button_GPIO_Port, HL_Button_Pin);
-SolarGators::Drivers::Button hazards      ("Left Turn", Haz_Button_GPIO_Port, Haz_Button_Pin);
+SolarGators::Drivers::Button hazards      ("Hazards", Haz_Button_GPIO_Port, Haz_Button_Pin);
 // Right Side
 SolarGators::Drivers::Button right_turn   ("Right Turn", RT_Button_GPIO_Port, RT_Button_Pin);
 SolarGators::Drivers::Button cruise_plus  ("Cruise Plus", Cruise_P_GPIO_Port, Cruise_P_Pin);
 SolarGators::Drivers::Button horn         ("Horn", Horn_Button_GPIO_Port, Horn_Button_Pin);
 SolarGators::Drivers::Button cruise       ("Cruise", Cruise_Button_GPIO_Port, Cruise_Button_Pin);
-SolarGators::Drivers::Button reverse      ("Reverse", Reverse_Button_GPIO_Port, Reverse_Button_Pin, 3000);
+SolarGators::Drivers::Button reverse      ("Reverse", Reverse_Button_GPIO_Port, Reverse_Button_Pin);
 // Leds
 // Left Side
 SolarGators::Drivers::LED lt_indicator    ("LT Indicator", LT_Led_GPIO_Port, LT_Led_Pin);

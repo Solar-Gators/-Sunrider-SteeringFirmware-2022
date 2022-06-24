@@ -70,8 +70,8 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_CAN_Init(void);
 static void MX_TIM3_Init(void);
-static void MX_USB_PCD_Init(void);
 static void MX_TIM2_Init(void);
+static void MX_USB_PCD_Init(void);
 void StartDefaultTask(void *argument);
 
 /* USER CODE BEGIN PFP */
@@ -114,8 +114,8 @@ int main(void)
   MX_GPIO_Init();
   MX_CAN_Init();
   MX_TIM3_Init();
-  MX_USB_PCD_Init();
   MX_TIM2_Init();
+  MX_USB_PCD_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -418,8 +418,8 @@ static void MX_GPIO_Init(void)
                            Reverse_Button_Pin HL_Button_Pin Eco_Button_Pin LT_Button_Pin */
   GPIO_InitStruct.Pin = RT_Button_Pin|Cruise_P_Pin|Horn_Button_Pin|Cruise_Button_Pin
                           |Reverse_Button_Pin|HL_Button_Pin|Eco_Button_Pin|LT_Button_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
-  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pins : RT_Led_Pin Cruise_Led_Pin HL_Led_Pin Eco_Led_Pin */
@@ -475,14 +475,14 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : Haz_Button_Pin */
   GPIO_InitStruct.Pin = Haz_Button_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
-  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(Haz_Button_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : Cruise_M_Pin */
   GPIO_InitStruct.Pin = Cruise_M_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
-  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(Cruise_M_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : TP_IRQ_Pin */
