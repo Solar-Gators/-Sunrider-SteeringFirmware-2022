@@ -87,7 +87,10 @@ void CPP_UserSetup(void)
   LightsState.AddButton(&reverse);
   // Load the CAN Controller
   CANController.AddRxModule(&BMS_Rx_0);
+  CANController.AddRxModule(&BMS_Rx_2);
+  CANController.AddRxModule(&BMS_Rx_4);
   CANController.AddRxModule(&Motor_Rx_0);
+  CANController.AddRxModule(&Motor_Rx_2);
   // Start Thread that Handles Turn Signal LEDs
   signal_timer_id = osTimerNew((osThreadFunc_t)UpdateSignals, osTimerPeriodic, NULL, &signal_timer_attr);
   if (signal_timer_id == NULL)
@@ -159,6 +162,8 @@ void UpdateUI()
     // Update Speed
     float speed = Motor_Rx_0.GetMotorRPM() * 60 * WHEEL_DIAM_MI;
     ui.UpdateSpeed(speed);
+    //draw any trip codes
+    ui.DrawTripCodes(Motor_Rx_2, BMS_Rx_4);
     osDelay(40); // Aim for 20hz
   }
 }
