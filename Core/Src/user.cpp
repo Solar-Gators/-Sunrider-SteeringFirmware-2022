@@ -162,8 +162,9 @@ void UpdateUI()
     // Update Speed
     float speed = Motor_Rx_0.GetMotorRPM() * 60 * WHEEL_DIAM_MI;
     ui.UpdateSpeed(speed);
-    //draw any trip codes
-    ui.DrawTripCodes(Motor_Rx_2, BMS_Rx_4);
+    //draw trip codes
+    ui.UpdateMitsubaTrip(&Motor_Rx_2);
+    ui.UpdateBMSTrip(&BMS_Rx_4);
     osDelay(40); // Aim for 20hz
   }
 }
