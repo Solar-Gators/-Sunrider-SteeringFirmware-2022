@@ -74,7 +74,6 @@ void Error_Handler(void);
 #define ERROR_GPIO_Port GPIOF
 #define Horn_Button_Pin GPIO_PIN_0
 #define Horn_Button_GPIO_Port GPIOC
-#define Horn_Button_EXTI_IRQn EXTI0_1_IRQn
 #define Cruise_Button_Pin GPIO_PIN_1
 #define Cruise_Button_GPIO_Port GPIOC
 #define Cruise_Button_EXTI_IRQn EXTI0_1_IRQn

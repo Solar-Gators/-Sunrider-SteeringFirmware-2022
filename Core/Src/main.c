@@ -414,10 +414,10 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, LCD_READ_Pin|LCD_WRITE_Pin|LCD_CD_Pin|LCD_CS_Pin, GPIO_PIN_SET);
 
-  /*Configure GPIO pins : RT_Button_Pin Cruise_P_Pin Horn_Button_Pin Cruise_Button_Pin
-                           Reverse_Button_Pin HL_Button_Pin Eco_Button_Pin LT_Button_Pin */
-  GPIO_InitStruct.Pin = RT_Button_Pin|Cruise_P_Pin|Horn_Button_Pin|Cruise_Button_Pin
-                          |Reverse_Button_Pin|HL_Button_Pin|Eco_Button_Pin|LT_Button_Pin;
+  /*Configure GPIO pins : RT_Button_Pin Cruise_P_Pin Cruise_Button_Pin Reverse_Button_Pin
+                           HL_Button_Pin Eco_Button_Pin LT_Button_Pin */
+  GPIO_InitStruct.Pin = RT_Button_Pin|Cruise_P_Pin|Cruise_Button_Pin|Reverse_Button_Pin
+                          |HL_Button_Pin|Eco_Button_Pin|LT_Button_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
@@ -435,6 +435,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : Horn_Button_Pin */
+  GPIO_InitStruct.Pin = Horn_Button_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(Horn_Button_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : Reverse_Led_Pin LCD_RST_Pin LT_Led_Pin BPS_Fault_Pin */
   GPIO_InitStruct.Pin = Reverse_Led_Pin|LCD_RST_Pin|LT_Led_Pin|BPS_Fault_Pin;

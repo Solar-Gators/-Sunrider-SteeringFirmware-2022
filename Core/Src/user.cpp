@@ -68,7 +68,7 @@ void CPP_UserSetup(void)
     // Right Side
     right_turn.action_ = etl::delegate<void(void)>::create<SteeringController, LightsState, &SteeringController::ToggleRightTurnSignal>();
     cruise_plus.action_ = etl::delegate<void(void)>::create<SteeringController, LightsState, &SteeringController::IncreaseCruiseSpeed>();
-    horn.action_ = etl::delegate<void(void)>::create<SteeringController, LightsState, &SteeringController::ToggleHorn>();
+//    horn.action_ = etl::delegate<void(void)>::create<SteeringController, LightsState, &SteeringController::ToggleHorn>();
     cruise.action_ = etl::delegate<void(void)>::create<HandleCruise>();
     reverse.action_ = etl::delegate<void(void)>::create<HandleReverse>();
   }
@@ -82,7 +82,7 @@ void CPP_UserSetup(void)
   // Right side
   LightsState.AddButton(&right_turn);
   LightsState.AddButton(&cruise_plus);
-  LightsState.AddButton(&horn);
+//  LightsState.AddButton(&horn);
   LightsState.AddButton(&cruise);
   LightsState.AddButton(&reverse);
   // Load the CAN Controller
@@ -171,7 +171,15 @@ void UpdateUI()
 
 void SendCanMsgs()
 {
+  // Check if horn is pressed
+  GPIO_PinState horn = HAL_GPIO_ReadPin(Horn_Button_GPIO_Port, Horn_Button_Pin);
+  if(horn == GPIO_PIN_RESET)
+    LightsState.EnableHorn();
+  else
+    LightsState.DisableHorn();
+  // Send the lights state
   CANController.Send(&LightsState);
+  // Request motor controller data
   McReq.SetRequestAllFrames();
   CANController.Send(&McReq);
 }

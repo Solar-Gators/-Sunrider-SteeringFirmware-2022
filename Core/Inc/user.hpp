@@ -39,7 +39,7 @@ SolarGators::Drivers::Button hazards      ("Hazards", Haz_Button_GPIO_Port, Haz_
 // Right Side
 SolarGators::Drivers::Button right_turn   ("Right Turn", RT_Button_GPIO_Port, RT_Button_Pin);
 SolarGators::Drivers::Button cruise_plus  ("Cruise Plus", Cruise_P_GPIO_Port, Cruise_P_Pin);
-SolarGators::Drivers::Button horn         ("Horn", Horn_Button_GPIO_Port, Horn_Button_Pin);
+//SolarGators::Drivers::Button horn         ("Horn", Horn_Button_GPIO_Port, Horn_Button_Pin);
 SolarGators::Drivers::Button cruise       ("Cruise", Cruise_Button_GPIO_Port, Cruise_Button_Pin);
 SolarGators::Drivers::Button reverse      ("Reverse", Reverse_Button_GPIO_Port, Reverse_Button_Pin);
 // Leds
