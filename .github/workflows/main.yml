@@ -31,7 +31,7 @@ jobs:
 
       - uses: xanderhendriks/action-build-stm32cubeide@v5.0
         with:
-          project-path: '${{ github.workspace }}/.cproject'
+          project-path: '${{ github.workspace }}'
           project-target: 'SteeringFirmware'
 
       - uses: actions/upload-artifact@v3
