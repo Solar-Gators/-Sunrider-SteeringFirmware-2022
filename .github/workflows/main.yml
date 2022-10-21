@@ -27,9 +27,11 @@ jobs:
         with:
           submodules: 'recursive'
 
+      - run: ls
+
       - uses: xanderhendriks/action-build-stm32cubeide@v5.0
         with:
-          project-path: '${{ github.workspace }}/.project'
+          project-path: '${{ github.workspace }}'
           project-target: 'SteeringFirmware'
 
       - uses: actions/upload-artifact@v3
