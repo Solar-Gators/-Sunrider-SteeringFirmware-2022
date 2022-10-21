@@ -33,7 +33,7 @@ jobs:
       - uses: xanderhendriks/action-build-stm32cubeide@v5.0
         with:
           project-path: '/github/workspace/'
-          project-target: 'SteeringFirmware'
+          project-target: 'SteeringFirmware-2022'
 
       - uses: actions/upload-artifact@v3
         with:
