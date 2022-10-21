@@ -27,7 +27,7 @@ jobs:
         with:
           submodules: 'recursive'
 
-      - run: -la ls
+      - run: ls -la
 
       - uses: xanderhendriks/action-build-stm32cubeide@v5.0
         with:
