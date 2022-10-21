@@ -28,6 +28,7 @@ jobs:
           submodules: 'recursive'
 
       - run: cat ${{ github.workspace }}/.cproject
+      - run: cd ${{ github.workspace }} && ls
 
       - uses: xanderhendriks/action-build-stm32cubeide@v5.0
         with:
