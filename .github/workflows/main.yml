@@ -26,10 +26,12 @@ jobs:
       - uses: actions/checkout@v3
         with:
           submodules: 'recursive'
-      - uses: John-Carr/STM32-Infrastructure@main
-        with: 
-          project-path: '/github/workspace/' 
+
+      - uses: Solar-Gators/STM32-Infrastructure@main
+        with:
+          project-path: '/github/workspace/'
           project-target: 'SteeringFirmware'
+
       - uses: actions/upload-artifact@v3
         with:
           name: 'Release Binary'
