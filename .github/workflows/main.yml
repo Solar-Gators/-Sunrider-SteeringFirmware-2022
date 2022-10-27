@@ -27,7 +27,7 @@ jobs:
         with:
           submodules: 'recursive'
 
-      - uses: xanderhendriks/action-build-stm32cubeide@v5.0
+      - uses: xanderhendriks/action-build-stm32cubeide@v7.2
         with:
           project-path: '.'
           project-target: 'SteeringFirmware'
