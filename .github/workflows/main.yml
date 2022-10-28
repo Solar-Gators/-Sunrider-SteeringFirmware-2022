@@ -27,9 +27,9 @@ jobs:
         with:
           submodules: 'recursive'
 
-      - uses: Solar-Gators/STM32-Infrastructure@main
+      - uses: xanderhendriks/action-build-stm32cubeide@v7.2
         with:
-          project-path: '/github/workspace/'
+          project-path: '.'
           project-target: 'SteeringFirmware'
 
       - uses: actions/upload-artifact@v3
